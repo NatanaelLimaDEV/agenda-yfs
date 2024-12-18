@@ -1,0 +1,1 @@
+ALTER TABLE "att_concluido" ALTER COLUMN "valor" DROP NOT NULL;
