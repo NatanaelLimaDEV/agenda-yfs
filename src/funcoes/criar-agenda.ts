@@ -27,7 +27,7 @@ export async function CriarAgenda({
   musica,
 }: CriarAgendaRequest) {
   // Converte a data para um objeto Date caso seja uma string
-  const dataConvertida = dayjs(data).tz("America/Sao_Paulo").startOf('day').toDate()
+  const dataConvertida = dayjs(data).tz("America/Sao_Paulo").toDate()
 
   const result = await db
 
