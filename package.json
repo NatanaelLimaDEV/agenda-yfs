@@ -9,8 +9,8 @@
     "start": "node src/http/server.ts",
     "dev": "tsx watch --env-file .env src/http/server.ts",
     "seed": "tsx --env-file .env src/db/seed.ts",
-    "vercel-build": "drizzle-kit generate:pg",
-    "migrate": "drizzle-kit deploy:pg"
+    "generate:migrations": "npx drizzle-kit generate",
+    "migrate": "npx drizzle-kit deploy"
   },
   "keywords": [],
   "author": "",
