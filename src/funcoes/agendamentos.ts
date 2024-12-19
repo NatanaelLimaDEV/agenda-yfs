@@ -48,7 +48,12 @@ export async function agendamento() {
   .from(agendamentosCriadosMes)
   .leftJoin(agendamentosConcluidos, eq(agendamentosConcluidos.agendaId, agendamentosCriadosMes.id))
 
+  const agendamentosComDataCorrigida = agendaPendente.map(item => ({
+    ...item,
+    data: dayjs(item.data).tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss")  // Ajustando a data para o fuso correto
+  }))
+
   return {
-    agendaPendente
+    agendamentosComDataCorrigida
   }
 }

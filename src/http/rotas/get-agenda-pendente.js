@@ -4,8 +4,8 @@ exports.rotaGetAgendaPendente = void 0;
 const agendamentos_1 = require("../../funcoes/agendamentos");
 const rotaGetAgendaPendente = async (app) => {
     app.get('/agenda-pendente', async () => {
-        const { agendaPendente } = await (0, agendamentos_1.agendamento)();
-        return { agendaPendente };
+        const { agendamentosComDataCorrigida } = await (0, agendamentos_1.agendamento)();
+        return { agendamentosComDataCorrigida };
     });
 };
 exports.rotaGetAgendaPendente = rotaGetAgendaPendente;
