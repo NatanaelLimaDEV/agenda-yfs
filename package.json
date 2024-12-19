@@ -9,8 +9,7 @@
     "start": "node src/http/server.ts",
     "dev": "tsx watch --env-file .env src/http/server.ts",
     "seed": "tsx --env-file .env src/db/seed.ts",
-    "generate:migrations": "npx drizzle-kit generate",
-    "migrate": "npx drizzle-kit deploy"
+    "vercel-build": "npx drizzle-kit deploy && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -26,9 +25,11 @@
   "dependencies": {
     "@fastify/cors": "^10.0.1",
     "@paralleldrive/cuid2": "^2.2.2",
+    "@vercel/postgres": "^0.10.0",
     "dayjs": "^1.11.13",
     "dayjs-plugin-utc": "^0.1.2",
     "docker": "^1.0.0",
+    "dotenv": "^16.4.7",
     "drizzle-orm": "^0.36.4",
     "fastify": "^5.1.0",
     "fastify-type-provider-zod": "^4.0.2",
