@@ -10,7 +10,7 @@ export const agenda = pgTable('agenda', {
   nome: text('nome').notNull(),
   email: text('email').notNull(),
   contato: text('contato').notNull(),
-  data: timestamp('data', { withTimezone: true }).notNull().defaultNow(),
+  data: text('data'),
   hora: text('hora').notNull(),
   servico: text('servico'),
   musica: text('musica'),

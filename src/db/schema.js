@@ -12,7 +12,7 @@ exports.agenda = (0, pg_core_2.pgTable)('agenda', {
     nome: (0, pg_core_2.text)('nome').notNull(),
     email: (0, pg_core_2.text)('email').notNull(),
     contato: (0, pg_core_2.text)('contato').notNull(),
-    data: (0, pg_core_1.timestamp)('data', { withTimezone: true }).notNull().defaultNow(),
+    data: (0, pg_core_2.text)('data'),
     hora: (0, pg_core_2.text)('hora').notNull(),
     servico: (0, pg_core_2.text)('servico'),
     musica: (0, pg_core_2.text)('musica'),
