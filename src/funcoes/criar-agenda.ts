@@ -36,7 +36,7 @@ export async function CriarAgenda({
       nome,
       email,
       contato,
-      data: dataConvertida,
+      data: dataConvertida.toString(),
       hora,
       servico,
       musica,

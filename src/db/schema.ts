@@ -23,7 +23,7 @@ export const attConcluido = pgTable('att_concluido', {
   agendaId: text('agenda_id')
     .references(() => agenda.id)
     .notNull(),
-  data: timestamp('data', { withTimezone: true }).defaultNow(),
+  data: text('data'),
   servico: text('servico'),
   valor: numeric(),
 })

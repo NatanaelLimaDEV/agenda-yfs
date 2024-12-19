@@ -43,6 +43,20 @@
       "when": 1733283306836,
       "tag": "0005_chemical_bloodstrike",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1734583588736,
+      "tag": "0006_handy_proteus",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1734583689494,
+      "tag": "0007_overconfident_sleepwalker",
+      "breakpoints": true
     }
   ]
 }

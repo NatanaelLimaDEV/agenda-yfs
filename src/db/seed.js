@@ -18,7 +18,7 @@ async function seed() {
             nome: 'Maria Nilda',
             email: 'teste@teste.com',
             contato: '(88) 96747747',
-            data: dataAtual,
+            data: dataAtual.toDateString(),
             hora: '8:00h',
             servico: 'Alongamento',
             musica: 'Forró',
@@ -27,7 +27,7 @@ async function seed() {
             nome: 'Ana Liz',
             email: 'teste@teste.com',
             contato: '(88) 96747747',
-            data: dataAtual,
+            data: dataAtual.toDateString(),
             hora: '13:00h',
             servico: 'Esmaltação',
             musica: 'Forró',
@@ -36,7 +36,7 @@ async function seed() {
             nome: 'Geralda Cruz',
             email: 'teste@teste.com',
             contato: '(88) 96747747',
-            data: dataAtual,
+            data: dataAtual.toDateString(),
             hora: '17:00h',
             servico: 'Alongamento',
             musica: 'Forró',
@@ -46,12 +46,12 @@ async function seed() {
     await _1.db
         .insert(schema_1.attConcluido)
         .values([
-        { agendaId: result[0].id, data: dataAtual, servico: result[0].servico, valor: '70' },
+        { agendaId: result[0].id, data: dataAtual.toDateString(), servico: result[0].servico, valor: '70' },
     ]);
     await _1.db
         .insert(schema_1.attConcluido)
         .values([
-        { agendaId: result[1].id, data: dataAtual, servico: result[1].servico, valor: '70' },
+        { agendaId: result[1].id, data: dataAtual.toDateString(), servico: result[1].servico, valor: '70' },
     ]);
 }
 seed().finally(() => {
