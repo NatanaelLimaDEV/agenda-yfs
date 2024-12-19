@@ -1,7 +1,11 @@
 import dayjs from 'dayjs'
 import { db } from '../db'
 import { agenda } from '../db/schema'
-import timezone from 'dayjs/plugin/timezone'; 
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 interface CriarAgendaRequest {
   nome: string
@@ -22,12 +26,8 @@ export async function CriarAgenda({
   servico,
   musica,
 }: CriarAgendaRequest) {
-
-  dayjs.extend(timezone);
-
   // Converte a data para um objeto Date caso seja uma string
-  const dataConvertida = dayjs(data).startOf('day').toDate()
-  const horaConvertida = dayjs(`${data} ${hora}`).tz('America/Sao_Paulo').toDate(); // Ajustando para o fuso horário de São Paulo
+  const dataConvertida = dayjs(data).tz("America/Sao_Paulo").startOf('day').toDate()
 
   const result = await db
 
@@ -37,7 +37,7 @@ export async function CriarAgenda({
       email,
       contato,
       data: dataConvertida,
-      hora: horaConvertida.toDateString(),
+      hora,
       servico,
       musica,
     })
