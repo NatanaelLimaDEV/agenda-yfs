@@ -3,8 +3,8 @@ import { agendamento } from '../../funcoes/agendamentos'
 
 export const rotaGetAgendaPendente: FastifyPluginAsyncZod = async app => {
     app.get('/agenda-pendente', async () => {
-        const{ agendamentosComDataCorrigida } = await agendamento()
+        const{ agendaPendente } = await agendamento()
       
-        return { agendamentosComDataCorrigida }
+        return { agendaPendente }
       })
 }
