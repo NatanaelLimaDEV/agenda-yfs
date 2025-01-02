@@ -13,7 +13,7 @@ dayjs_1.default.extend(utc_1.default);
 dayjs_1.default.extend(timezone_1.default);
 async function CriarAgenda({ nome, email, contato, data, hora, servico, musica, }) {
     // Converte a data para um objeto Date caso seja uma string
-    const dataConvertida = (0, dayjs_1.default)(data).tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss");
+    const dataConvertida = (0, dayjs_1.default)(data).utc().toDate();
     const result = await db_1.db
         .insert(schema_1.agenda)
         .values({

@@ -45,11 +45,7 @@ async function agendamento() {
     })
         .from(agendamentosCriadosMes)
         .leftJoin(agendamentosConcluidos, (0, drizzle_orm_1.eq)(agendamentosConcluidos.agendaId, agendamentosCriadosMes.id));
-    const agendamentosComDataCorrigida = agendaPendente.map(item => ({
-        ...item,
-        data: (0, dayjs_1.default)(item.data).tz("America/Sao_Paulo").format("YYYY-MM-DD HH:mm:ss") // Ajustando a data para o fuso correto
-    }));
     return {
-        agendamentosComDataCorrigida
+        agendaPendente
     };
 }
