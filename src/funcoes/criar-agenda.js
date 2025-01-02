@@ -12,15 +12,13 @@ const timezone_1 = __importDefault(require("dayjs/plugin/timezone"));
 dayjs_1.default.extend(utc_1.default);
 dayjs_1.default.extend(timezone_1.default);
 async function CriarAgenda({ nome, email, contato, data, hora, servico, musica, }) {
-    // Converte a data para um objeto Date caso seja uma string
-    const dataConvertida = (0, dayjs_1.default)(data).utc().toDate();
     const result = await db_1.db
         .insert(schema_1.agenda)
         .values({
         nome,
         email,
         contato,
-        data: dataConvertida.toString(),
+        data,
         hora,
         servico,
         musica,

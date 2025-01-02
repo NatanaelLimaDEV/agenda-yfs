@@ -26,8 +26,6 @@ export async function CriarAgenda({
   servico,
   musica,
 }: CriarAgendaRequest) {
-  // Converte a data para um objeto Date caso seja uma string
-  const dataConvertida = dayjs(data).utc().toDate()
 
   const result = await db
 
@@ -36,7 +34,7 @@ export async function CriarAgenda({
       nome,
       email,
       contato,
-      data: dataConvertida.toString(),
+      data,
       hora,
       servico,
       musica,
